@@ -12,3 +12,5 @@ classDecl      → "class" IDENTIFIER ( "<" IDENTIFIER )?
                  "{" function* "}" ;   
 funDecl        → "fun" function ;   
 varDecl        → "var" IDENTIFIER ( "=" expression )? ";" ;   
+
+ok
