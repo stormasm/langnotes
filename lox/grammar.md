@@ -29,15 +29,15 @@ statement      → exprStmt
                | block ;
 
 exprStmt       → expression ";" ;
-	
+
 forStmt        → "for" "(" ( varDecl | exprStmt | ";" )
                            expression? ";"
                            expression? ")" statement ;
-	
+
 ifStmt         → "if" "(" expression ")" statement
                  ( "else" statement )? ;
 </pre>
-	
+
 #### Expressions
 
 <pre>
@@ -48,21 +48,21 @@ assignment     → ( call "." )? IDENTIFIER "=" assignment
 
 logic_or       → logic_and ( "or" logic_and )* ;
 logic_and      → equality ( "and" equality )* ;
-	
+
 equality       → comparison ( ( "!=" | "==" ) comparison )* ;
-	
+
 comparison     → term ( ( ">" | ">=" | "<" | "<=" ) term )* ;
-	
+
 term           → factor ( ( "-" | "+" ) factor )* ;
 factor         → unary ( ( "/" | "*" ) unary )* ;
 
 unary          → ( "!" | "-" ) unary | call ;
 call           → primary ( "(" arguments? ")" | "." IDENTIFIER )* ;
-	
+
 primary        → "true" | "false" | "nil" | "this"
                | NUMBER | STRING | IDENTIFIER | "(" expression ")"
                | "super" "." IDENTIFIER ;
-	
+
 printStmt      → "print" expression ";" ;
 returnStmt     → "return" expression? ";" ;
 whileStmt      → "while" "(" expression ")" statement ;
@@ -86,3 +86,7 @@ IDENTIFIER     → ALPHA ( ALPHA | DIGIT )* ;
 ALPHA          → "a" ... "z" | "A" ... "Z" | "_" ;
 DIGIT          → "0" ... "9" ;
 </pre>
+
+### References
+
+- [Crafting Interpreters: Appendix I](https://craftinginterpreters.com/appendix-i.html)
