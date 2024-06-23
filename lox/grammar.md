@@ -64,11 +64,17 @@ whileStmt      → "while" "(" expression ")" statement ;
 block          → "{" declaration* "}" ;
 </pre>
 
+#### Utility Rules
+
 <pre>
 function       → IDENTIFIER "(" parameters? ")" block ;
 parameters     → IDENTIFIER ( "," IDENTIFIER )* ;
 arguments      → expression ( "," expression )* ;
+</pre>
 
+#### Lexical Grammar
+
+<pre>
 NUMBER         → DIGIT+ ( "." DIGIT+ )? ;
 STRING         → "\"" <any char except "\"">* "\"" ;
 IDENTIFIER     → ALPHA ( ALPHA | DIGIT )* ;
