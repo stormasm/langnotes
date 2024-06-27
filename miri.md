@@ -1,7 +1,7 @@
 
 - [Introducing MIR](https://blog.rust-lang.org/2016/04/19/MIR.html)
 
-### What does MIRI stand for
+#### What does MIRI stand for ?
 
 From the conclusion in the blog post Introducing MIR
 
